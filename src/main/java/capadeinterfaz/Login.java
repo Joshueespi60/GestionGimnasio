@@ -10,6 +10,8 @@ package capadeinterfaz;
  */
 import capadenegocio.UsuarioNegocio;
 import com.formdev.flatlaf.FlatIntelliJLaf;
+import java.awt.Image;
+import java.io.File;
 import javax.swing.*;
 
 public class Login extends javax.swing.JFrame {
@@ -22,8 +24,33 @@ public class Login extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null); // Centra la ventana
         
+        cargarImagenDesdeRuta();
     }
-      
+    private void cargarImagenDesdeRuta() {
+        try {
+        // Ruta absoluta de la imagen
+        String ruta = "C:/Users/Joshue/Downloads/programacion/GestionGimnasio/src/main/java/img/imagen.jpg";
+
+        File archivoImagen = new File(ruta);
+        if (archivoImagen.exists()) {
+            ImageIcon icono = new ImageIcon(ruta);
+            
+            // Ajustar la imagen al tamaño deseado
+            Image imagen = icono.getImage().getScaledInstance(450, 446, Image.SCALE_SMOOTH);
+            jLabel2.setIcon(new ImageIcon(imagen));
+
+            // Ajustar el tamaño de jLabel2 desde código
+            jLabel2.setBounds(50, 50, 450, 446); // (x, y, ancho, alto)
+
+            System.out.println("✅ Imagen cargada con éxito en jLabel2.");
+        } else {
+            System.out.println("❌ Error: No se encontró la imagen en la ruta especificada.");
+        }
+    } catch (Exception e) {
+        e.printStackTrace();
+        System.out.println("❌ Error al cargar la imagen.");
+    }
+    }  
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -33,22 +60,48 @@ public class Login extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        btnIngresar = new javax.swing.JButton();
-        btnSalir = new javax.swing.JButton();
         lblUsuario = new javax.swing.JLabel();
+        txtUsuario = new javax.swing.JTextField();
         lblPassword = new javax.swing.JLabel();
         txtPassword = new javax.swing.JPasswordField();
-        txtUsuario = new javax.swing.JTextField();
+        btnIngresar = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(457, 559));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setLayout(null);
+
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Arial Black", 1, 48)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("LOGIN");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 53, -1, 43));
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(580, 20, 179, 68);
         jLabel1.getAccessibleContext().setAccessibleName("lbltitle");
+
+        lblUsuario.setBackground(new java.awt.Color(255, 255, 255));
+        lblUsuario.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        lblUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        lblUsuario.setText("Usuario:");
+        jPanel1.add(lblUsuario);
+        lblUsuario.setBounds(620, 110, 87, 26);
+        jPanel1.add(txtUsuario);
+        txtUsuario.setBounds(580, 170, 179, 40);
+
+        lblPassword.setBackground(new java.awt.Color(255, 255, 255));
+        lblPassword.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
+        lblPassword.setForeground(new java.awt.Color(255, 255, 255));
+        lblPassword.setText("Contraseña:");
+        jPanel1.add(lblPassword);
+        lblPassword.setBounds(610, 250, 119, 26);
+        jPanel1.add(txtPassword);
+        txtPassword.setBounds(580, 300, 179, 40);
 
         btnIngresar.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         btnIngresar.setText("INGRESAR");
@@ -58,7 +111,8 @@ public class Login extends javax.swing.JFrame {
                 btnIngresarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(171, 357, 116, 39));
+        jPanel1.add(btnIngresar);
+        btnIngresar.setBounds(610, 370, 116, 39);
 
         btnSalir.setFont(new java.awt.Font("Arial Black", 1, 12)); // NOI18N
         btnSalir.setText("SALIR");
@@ -67,17 +121,16 @@ public class Login extends javax.swing.JFrame {
                 btnSalirActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(171, 423, 116, 37));
+        jPanel1.add(btnSalir);
+        btnSalir.setBounds(610, 450, 116, 37);
 
-        lblUsuario.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
-        lblUsuario.setText("Usuario:");
-        getContentPane().add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 135, -1, -1));
+        jLabel2.setText("jLabel2");
+        jLabel2.setMaximumSize(new java.awt.Dimension(450, 446));
+        jLabel2.setMinimumSize(new java.awt.Dimension(450, 446));
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(210, 130, 37, 16);
 
-        lblPassword.setFont(new java.awt.Font("Arial Black", 0, 18)); // NOI18N
-        lblPassword.setText("Contraseña:");
-        getContentPane().add(lblPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(164, 255, -1, -1));
-        getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 299, 179, 40));
-        getContentPane().add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(143, 197, 179, 40));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 840, 560));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -133,6 +186,8 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JButton btnIngresar;
     private javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lblPassword;
     private javax.swing.JLabel lblUsuario;
     private javax.swing.JPasswordField txtPassword;
