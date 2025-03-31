@@ -26,14 +26,13 @@ public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();
         setLocationRelativeTo(null); // Centra la ventana
-        cargarImagenDesdeRecurso("img/4.jpg", jLabel2, 480, 550); // Primera imagen
+        cargarImagenDesdeRecurso("img/6.jpg", jLabel2, 480, 550); // Primera imagen
          cargarImagenDesdeRecurso("img/2.png", jLabel3, 160, 120); // Segunda imagen
         
          // Ajustar las posiciones si es necesario
-    jLabel2.setBounds(0, 0, 480, 550);  // Primera imagen ocupa el espacio completo
-    jLabel3.setBounds(550, 10, 160, 120); // Ajusta la posición y tamaño de la segunda imagen
-       /* cargarImagenDesdeRuta();
-        cargarImagenDesdeRuta1();*/
+        jLabel2.setBounds(0, 0, 480, 550);  // Primera imagen ocupa el espacio completo
+        jLabel3.setBounds(550, 10, 160, 120); // Ajusta la posición y tamaño de la segunda imagen
+      
     }
     private void cargarImagenDesdeRecurso(String rutaRecurso, JLabel label, int ancho, int alto) {
     try {
@@ -60,57 +59,7 @@ public class Login extends javax.swing.JFrame {
         System.out.println("❌ Error al cargar la imagen.");
     }
     }
-    /*
-    private void cargarImagenDesdeRuta() {
-        try {
-        // Ruta absoluta de la imagen
-        String ruta = "C:/Users/Joshue/Downloads/programacion/GestionGimnasio/src/main/java/img/4.jpg";
-
-        File archivoImagen = new File(ruta);
-        if (archivoImagen.exists()) {
-            ImageIcon icono = new ImageIcon(ruta);
-            
-            // Ajustar la imagen al tamaño deseado
-            Image imagen = icono.getImage().getScaledInstance(480, 550, Image.SCALE_SMOOTH);
-            jLabel2.setIcon(new ImageIcon(imagen));
-
-            // Ajustar el tamaño de jLabel2 desde código
-            jLabel2.setBounds(0, 0, 480, 550); // (x, y, ancho, alto)
-
-            System.out.println("✅ Imagen cargada con éxito en jLabel2.");
-        } else {
-            System.out.println("❌ Error: No se encontró la imagen en la ruta especificada.");
-        }
-    } catch (Exception e) {
-        e.printStackTrace();
-        System.out.println("❌ Error al cargar la imagen.");
-    }
-    }
-     private void cargarImagenDesdeRuta1() {
-        try {
-        // Ruta absoluta de la imagen
-        String ruta = "C:/Users/Joshue/Downloads/programacion/GestionGimnasio/src/main/java/img/2.png";
-
-        File archivoImagen = new File(ruta);
-        if (archivoImagen.exists()) {
-            ImageIcon icono = new ImageIcon(ruta);
-            
-            // Ajustar la imagen al tamaño deseado
-            Image imagen = icono.getImage().getScaledInstance(160, 120, Image.SCALE_SMOOTH);
-            jLabel3.setIcon(new ImageIcon(imagen));
-
-            // Ajustar el tamaño de jLabel2 desde código
-            jLabel3.setBounds(550, 10, 160, 120); // (x, y, ancho, alto)
-
-            System.out.println("✅ Imagen cargada con éxito en jLabel2.");
-        } else {
-            System.out.println("❌ Error: No se encontró la imagen en la ruta especificada.");
-        }
-    } catch (Exception e) {
-        e.printStackTrace();
-        System.out.println("❌ Error al cargar la imagen.");
-    }
-    }   */
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -138,7 +87,8 @@ public class Login extends javax.swing.JFrame {
         setPreferredSize(new java.awt.Dimension(791, 526));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(254, 251, 251));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(null);
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -146,7 +96,7 @@ public class Login extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 153, 255));
         jLabel1.setText("BIENVENIDO");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(520, 100, 250, 60);
+        jLabel1.setBounds(500, 110, 250, 60);
         jLabel1.getAccessibleContext().setAccessibleName("lbltitle");
 
         lblUsuario.setBackground(new java.awt.Color(255, 255, 255));
@@ -205,6 +155,8 @@ public class Login extends javax.swing.JFrame {
         jPanel1.add(jPanel2);
         jPanel2.setBounds(0, 0, 480, 550);
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.setLayout(null);
         jPanel1.add(jPanel3);
         jPanel3.setBounds(550, 10, 160, 120);
