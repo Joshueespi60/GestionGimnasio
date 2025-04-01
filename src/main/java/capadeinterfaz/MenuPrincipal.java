@@ -113,6 +113,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jButton3.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         jButton3.setToolTipText("");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton3);
         jButton3.setBounds(30, 360, 60, 50);
         jPanel1.add(jButton1);
@@ -163,6 +168,14 @@ public class MenuPrincipal extends javax.swing.JFrame {
          gestionMembresias.setLocationRelativeTo(null); // Centrar la ventana
          this.dispose(); // Cerrar el menú principal (opcional)
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+         RegistroAsistencia registroasistencia = new RegistroAsistencia(); // Crear la ventana
+         registroasistencia.setVisible(true); // Hacer visible la ventana
+         registroasistencia.setLocationRelativeTo(null); // Centrar la ventana
+         this.dispose(); // Cerrar el menú principal (opcional)
+    }//GEN-LAST:event_jButton3ActionPerformed
     
     /**
      * @param args the command line arguments

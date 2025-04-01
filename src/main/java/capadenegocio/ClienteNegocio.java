@@ -37,4 +37,5 @@ public class ClienteNegocio {
     public List<Cliente> listarClientes() {
         return clienteDAO.obtenerClientes();
     }
+    
 }
